@@ -22,6 +22,7 @@
     SOFTWARE.
 
 */
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,18 +37,15 @@ using Rime.Core.Plugins;
 
 namespace RimePluginExample
 {
-    /// <summary>
-    /// Example plugin class for Rime.
-    /// </summary>
     public class RimeExamplePlugin : IPlugin
     {
-        // Set these to your current configuration
-        private string m_Name = "Example Plugin";
-        private string m_Author = "Rime Developers (kiwidog)";
-        private string m_Version = "0.01";
-        private string m_Description = "A example plugin.";
-        private string m_Extension = ".ext";
-        private UserControl m_Control = null;
+        public string Name { get { return "RimeExamplePlugin"; } }
+        public string Author { get { return "kiwidog"; } }
+        public string Version { get { return "v0.1"; } }
+        public string Description { get { return "Description"; } }
+        public string Extension { get { return "example"; } }
+        public bool UIEnabled { get { return MainControl != null; } }
+        public UserControl MainControl { get; private set; }
 
         /// <summary>
         /// Initialization with no parameters
@@ -55,7 +53,6 @@ namespace RimePluginExample
         /// <returns>True for success, False for failure</returns>
         public bool Init()
         {
-            System.Windows.MessageBox.Show("Init called.");
             return true;
         }
 
@@ -66,9 +63,7 @@ namespace RimePluginExample
         /// <returns>True for success, False for failure</returns>
         public bool Init(object p_Object)
         {
-            // Handle if one object is passed, check SDK for what is passed
-            System.Windows.MessageBox.Show("Init with one parameter called.");
-            return true;
+            return false;
         }
 
         /// <summary>
@@ -78,9 +73,7 @@ namespace RimePluginExample
         /// <returns>True for success, False for failure</returns>
         public bool Init(object[] p_Objects)
         {
-            // Handle multiple plugin objects coming in at once
-            System.Windows.MessageBox.Show("Init with multiple paramerters called.");
-            return true;
+            return false;
         }
 
         /// <summary>
@@ -88,42 +81,7 @@ namespace RimePluginExample
         /// </summary>
         public void Close()
         {
-            // TODO: Call cleanup if nessessary
-        }
 
-        public bool UIEnabled
-        {
-            get { return (m_Control != null); }
-        }
-
-        public string Name
-        {
-            get { return m_Name; }
-        }
-
-        public string Author
-        {
-            get { return m_Author; }
-        }
-
-        public string Version
-        {
-            get { return m_Version; }
-        }
-
-        public string Description
-        {
-            get { return m_Description; }
-        }
-
-        public UserControl MainControl
-        {
-            get { return m_Control; }
-        }
-
-        public string Extension
-        {
-            get { return m_Extension; }
         }
     }
 }
