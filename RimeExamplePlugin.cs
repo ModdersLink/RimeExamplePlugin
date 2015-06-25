@@ -1,87 +1,27 @@
-﻿/*
-    The MIT License (MIT)
-
-    Copyright (c) 2005-2015 kiwidoggie productions
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
-
-*/
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-// WPF User Control
-using System.Windows.Controls;
-
-// Plugin System
-using Rime.Core.Plugins;
+﻿using System.Windows.Controls;
+using RimeCommon.Logging;
+using RimeCommon.Plugins;
 
 namespace RimePluginExample
 {
-    public class RimeExamplePlugin : IPlugin
+    public class RimeExamplePlugin : RimePlugin
     {
-        public string Name { get { return "RimeExamplePlugin"; } }
-        public string Author { get { return "kiwidog"; } }
-        public string Version { get { return "v0.1"; } }
-        public string Description { get { return "Description"; } }
-        public string Extension { get { return "example"; } }
-        public bool UIEnabled { get { return MainControl != null; } }
-        public UserControl MainControl { get; private set; }
+        public override string Name { get { return "Rime Example Plugin"; } }
+        public override string Author { get { return "Example Author"; } }
+        public override string Version { get { return "1.0"; } }
+        public override string Description { get { return "An description for the example plugin, hmmm.... what should it be?"; } }
+        public override string Extension { get { return "_rime-plugin-example"; } }
+        public override UserControl MainControl { get { return null; } }
+        public override MountPoint Mount { get { return MountPoint.Center; } }
 
-        /// <summary>
-        /// Initialization with no parameters
-        /// </summary>
-        /// <returns>True for success, False for failure</returns>
-        public bool Init()
+        public RimeExamplePlugin()
         {
-            return true;
+            WriteLog(LogsLevel.All, "RimeExamplePlugin ctor called.");
         }
 
-        /// <summary>
-        /// Initalization with one parameter, plugin will have to do all type and cast checking itself.
-        /// </summary>
-        /// <param name="p_Object">Object passed as argument</param>
-        /// <returns>True for success, False for failure</returns>
-        public bool Init(object p_Object)
+        public override void Init()
         {
-            return false;
-        }
-
-        /// <summary>
-        /// Initialization with multiple parameters, plugin will have to do all type and cast checking itself.
-        /// </summary>
-        /// <param name="p_Objects">Array of objects passed as arguments</param>
-        /// <returns>True for success, False for failure</returns>
-        public bool Init(object[] p_Objects)
-        {
-            return false;
-        }
-
-        /// <summary>
-        /// Close is called when the plugin is being destroyed, free all memory, ui, resources here.
-        /// </summary>
-        public void Close()
-        {
-
+            
         }
     }
 }

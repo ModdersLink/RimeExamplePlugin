@@ -1,16 +1,15 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Rime Plugin Example")]
-[assembly: AssemblyDescription("Example Plugin")]
+[assembly: AssemblyTitle("RimePluginExample")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("kiwidoggie productions")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("RimePluginExample")]
-[assembly: AssemblyCopyright("Copyright © kiwidoggie productions 2005-2015")]
+[assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
