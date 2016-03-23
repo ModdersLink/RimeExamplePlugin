@@ -1,8 +1,10 @@
 ﻿using System.Windows.Controls;
+
+using RimeCommon.Plugins;
+using RimeCommon.Messaging;
+using RimeCommon.Messages;
 using RimeCommon.Content.Messages;
 using RimeCommon.Logging;
-using RimeCommon.Messaging;
-using RimeCommon.Plugins;
 
 namespace RimePluginExample
 {
@@ -18,16 +20,16 @@ namespace RimePluginExample
 
         public override void Init(params object[] p_Params)
         {
-            RegisterListener(MessagingSubSystem.Content);
+            m_MessageListener.RegisterListener(MessagingSubSystem.Content);
 
-            RegisterMessageCallback(typeof(ContentRequestOpen), OnContentRequestOpen);
+            m_MessageListener.RegisterMessageCallback(typeof(ContentRequestOpenMessage), OnContentRequestOpen);
 
             WriteLog(LogsLevel.All, "RimeExamplePlugin Init called.");
         }
 
         private void OnContentRequestOpen(RimeMessage p_Message)
         {
-            var s_Message = (ContentRequestOpen) p_Message;
+            var s_Message = (ContentRequestOpenMessage)p_Message;
 
             WriteLog(LogsLevel.All, "Swag, Swag, Swag, Swag");
         }

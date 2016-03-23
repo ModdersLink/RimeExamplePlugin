@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RimePluginExample</RootNamespace>
     <AssemblyName>RimePluginExample</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -35,7 +36,10 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="RimeCommon">
-      <HintPath>.\RimeCommon.dll</HintPath>
+      <HintPath>P:\Rime\RimeDeploy\Input\RimeCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="RimeLib">
+      <HintPath>P:\Rime\RimeDeploy\Input\RimeLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xaml" />
