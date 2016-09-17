@@ -33,17 +33,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
     <Reference Include="RimeCommon">
-      <HintPath>P:\Rime\RimeDeploy\Input\RimeCommon.dll</HintPath>
+      <HintPath>..\..\Reversing\PC\Rime\RimeDeploy\Test\RimeCommon.dll</HintPath>
     </Reference>
     <Reference Include="RimeLib">
-      <HintPath>P:\Rime\RimeDeploy\Input\RimeLib.dll</HintPath>
+      <HintPath>..\..\Reversing\PC\Rime\RimeDeploy\Test\RimeLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
-    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="RimeExamplePlugin.cs" />
